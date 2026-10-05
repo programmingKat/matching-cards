@@ -1,0 +1,9 @@
+html{
+    font-size: 62.50%;
+}
+
+.container{
+    display: grid; 
+    grid-template-columns: 20% 20% 20% 20% 20% ;
+    grid-template-rows:50% 50%;
+}
