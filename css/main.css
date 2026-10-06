@@ -6,4 +6,18 @@ html{
     display: grid; 
     grid-template-columns: 20% 20% 20% 20% 20% ;
     grid-template-rows:50% 50%;
+    font-size: 4rem;
+
+    div{
+        max-height: 5rem;
+        max-width: 5rem;
+        background:lightskyblue;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .hidden{
+        display:none;
+    }
+    
 }
