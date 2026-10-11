@@ -11,8 +11,9 @@ let container = document.querySelector('.container')
 const cardVals = ["💛", "🤎", "🧸","🍯", "✨"] 
 const cardIndices = [0,1,2,3,4,5,6,7,8,9]
 let cards = []
-
-
+let results = document.querySelector('#results')
+let matchEl = document.querySelector('#match')
+let matches = 0
 class Card{
     faceUp = false;
     display = true; 
@@ -48,6 +49,7 @@ class Board{
                 
                 //card.value
                 newCard.addEventListener('click', ()=>{
+                    
                     if(this.cardsFlipped.length <2){
                         newCard.innerText = card.value
                         card.flipCard()
@@ -58,6 +60,9 @@ class Board{
                     //check for match x
                     if(this.cardsFlipped[0]?.value==this.cardsFlipped[1]?.value){
                         this.match = true
+                        results.innerText = "You got a match !"
+                        matches +=1 
+                        matchEl.innerText = matches
                         console.log("match")
                         this.cardsFlipped =[]
                         return
@@ -71,6 +76,7 @@ class Board{
                             card.element.innerText = ''
                        }
                         this.cardsFlipped =[]
+                        results.innerText = 'Not a match. Try again ! '
                         console.log('not match')
                         //re-enable container
                         }, 500)
